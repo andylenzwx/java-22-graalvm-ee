@@ -1,13 +1,12 @@
 # Maintainer: Rasmus Moorats <xx+aur@nns.ee>
 
-_java=21
-_java_minor=+13.1
+_java=22
+_java_minor=+36-jvmci-b02
 pkgname="jdk${_java}-graalvm-ee-bin"
-pkgver=21.0.2
+pkgver=24.0.0
 pkgrel=1
 pkgdesc="Universal virtual machine for running applications written in a variety of languages (JVM-based, LLVM-based, or other), Java ${_java} version"
-arch=('x86_64'
-	'aarch64')
+arch=('x86_64')
 url='https://www.graalvm.org/'
 license=('custom:OTN')
 depends=('java-runtime-common'
@@ -18,11 +17,9 @@ provides=("java-runtime=${_java}"
 options=('staticlibs')
 install="$pkgname.install"
 source=('graalvm-ee-rebuild-libpolyglot.hook')
-sha256sums=('7dc37bd3703ebebcd6efa39534e6bb6e3ec9c8ee0d97e46d6df5349739c7d2ca')
-sha256sums_x86_64=('ee6286773c659afeefdf2f989a133e7a631c60897f2263ac183794ee1d6438f4')
-sha256sums_aarch64=('dfac8d0e7ff8a128e8e8283e1ed6e3540dc44e7a9084c956e8deb9f84a268338')
-source_x86_64=("https://download.oracle.com/graalvm/${_java}/archive/graalvm-jdk-${pkgver}_linux-x64_bin.tar.gz")
-source_aarch64=("https://download.oracle.com/graalvm/${_java}/archive/graalvm-jdk-${pkgver}_linux-aarch64_bin.tar.gz")
+sha256sums=('SKIP')
+sha256sums_x86_64=('SKIP')
+source_x86_64=("https://download.oracle.com/graalvm/22/latest/graalvm-jdk-22_linux-x64_bin.tar.gz")
 
 package() {
 	cd "graalvm-jdk-${pkgver}${_java_minor}"
